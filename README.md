@@ -1,3 +1,9 @@
+<!--
+    File: README.md
+    Author: Colin Dixon BSc, DipEd, Cert IV TAE
+    Date: 02 May 2026 09:01 AEST
+    Version: v03
+-->
 # OZ On Line (ozol.au)
 
 This repository contains the configuration and source code for the **ozol.au** platform. It serves a dual purpose as both a historical tech portfolio and a private URL shortener.
