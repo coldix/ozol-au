@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    File: sitemap.xml
+    Date: 01 May 2026 23:38 AEST
+    Version: v01
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ozol.au/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+</urlset>

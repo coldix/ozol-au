@@ -1,0 +1,145 @@
+<!--
+    File: index.html
+    Web site design by: Colin Dixon BSc, DipEd, Cert IV TAE
+    Helping businesses and communities Australia-wide, from Derby to Mallacoota.
+    Phone: 0419 415 000
+    Email: col@ozol.au
+    Website: https://coota.au
+    Date: 01 May 2026 23:34 AEST
+    Version: v01
+-->
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OZ On Line — Colin Dixon’s 40+ Year Journey in Australian Tech</title>
+  <meta name="description" content="From PDP-10s and dial-up servers to drones and AI: the story of OZ On Line and Colin Dixon’s four decades of building useful technology in Australia." />
+
+  <!-- Standard Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://ozol.au/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+
+  <!-- Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ozol.au/">
+  <meta property="og:title" content="OZ On Line — Colin Dixon’s 40+ Year Journey in Australian Tech">
+  <meta property="og:description" content="A practical history: classrooms, the early web, OZ On Line, and the leap to drones and AI.">
+  <meta property="og:image" content="https://ozol.au/images/og/ozol-og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OZ On Line — Colin Dixon’s 40+ Year Journey in Australian Tech">
+  <meta name="twitter:description" content="A practical history: classrooms, the early web, OZ On Line, and the leap to drones and AI.">
+  <meta name="twitter:image" content="https://ozol.au/images/og/ozol-og-image.jpg">
+
+  <!-- Schema: Person + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Colin Dixon",
+    "url":"https://ozol.au",
+    "email":"mailto:col@ozol.au",
+    "telephone":"+61-419-415-000",
+    "jobTitle":"Technology Consultant, Drone Pilot & AI",
+    "address":{"@type":"PostalAddress","addressLocality":"Mallacoota","addressRegion":"VIC","addressCountry":"AU"},
+    "sameAs":["https://oze.au","https://dixon.au","https://dronecraft.au","https://calendly.com/colindixon"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://ozol.au",
+    "name":"OZ On Line",
+    "potentialAction":{"@type":"SearchAction","target":"https://ozol.au/?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark">
+  <div class="veil" aria-hidden="true"></div>
+
+  <!-- Floating Buttons -->
+  <a href="#enquiry" id="enquiryBtn" class="btn floating-btn top-left"><strong>Make an Enquiry</strong></a>
+  <a href="https://calendly.com/colindixon" target="_blank" rel="noopener noreferrer" class="btn primary floating-btn bottom-left"><strong>Book a Meeting</strong></a>
+  <button class="toggle-theme" id="themeToggle" type="button" aria-pressed="true">☀️ Light Theme</button>
+
+  <div class="page">
+    <header>
+      <picture>
+        <source srcset="/images/icons/ozol-logo.webp" type="image/webp">
+        <img class="logo" src="/images/icons/ozol-logo.png" alt="OZOL 3D Logo" width="720" height="240" fetchpriority="high">
+      </picture>
+    </header>
+    
+    <div class="hero" aria-labelledby="introTitle">
+        <h1 id="introTitle" style="position:absolute;left:-9999px">OZ On Line — Colin Dixon's Journey</h1>
+        
+        <div class="card hero-card" style="margin-top: 4rem;">
+          <h2>Project in Development</h2>
+          <p class="hero-intro">This project is currently under construction. Stay tuned!</p>
+        </div>
+    </div>
+
+    <main></main>
+
+    <footer>
+      <p>© <span id="y"></span> Colin Dixon &nbsp;|&nbsp; Website by <a href="https://oze.au" target="_blank" rel="noopener"><strong>OzOnLine</strong></a><br><small>v01 (01 May 2026 23:34 AEST)</small></p>
+    </footer>
+  </div>
+
+  <!-- Modals -->
+  <div id="imgModal" class="modal" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="frame">
+      <img id="modalImg" src="" alt="Expanded image view">
+    </div>
+  </div>
+  
+  <div id="enquiryModal" class="modal">
+    <div class="card form-modal-content">
+        <h3 style="margin-top:0">Enquiry Form</h3>
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label for="enquiry-reason">Reason for Enquiry*</label>
+                <select id="enquiry-reason" name="enquiry-reason" required>
+                    <option value="" disabled selected>Please select a reason...</option>
+                    <option value="AI & Automation">AI & Automation</option>
+                    <option value="Web Site & Digital Strategy">Web Site & Digital Strategy</option>
+                    <option value="Drone & Media Services">Drone & Media Services</option>
+                    <option value="Domain Names">Domain Names</option>
+                    <option value="General Consulting">General Consulting</option>
+                </select>
+            </div>
+            <div class="form-group"><label for="name">Name*</label><input type="text" id="name" name="name" required></div>
+            <div class="form-group"><label for="email">Email*</label><input type="email" id="email" name="email" required></div>
+            <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" name="phone"></div>
+            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="3"></textarea></div>
+            <div style="display:flex;justify-content:flex-end;gap:.75rem;margin-top:1rem">
+                <button type="button" class="btn" id="cancelBtn">Cancel</button>
+                <button type="submit" class="btn primary">Next</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  
+  <div id="actionModal" class="modal">
+    <div class="card form-modal-content">
+        <h3>Thank You!</h3>
+        <p>Your enquiry has been formatted below. Click "Email Us" to send, or "Copy" to save.</p>
+        <pre id="formatted-enquiry"></pre>
+        <div style="display:flex;justify-content:flex-end;gap:.75rem">
+            <button id="copyBtn" class="btn">Copy</button>
+            <a id="emailUsBtn" class="btn primary">Email Us</a>
+        </div>
+    </div>
+  </div>
+
+  <script defer src="js/script.js"></script>
+</body>
+</html>
