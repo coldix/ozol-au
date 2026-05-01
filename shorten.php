@@ -5,8 +5,8 @@ header('Content-Type: application/json');
 require_once dirname(__FILE__) . '/includes/load-yourls.php';
 
 // Auto-activate QR Code plugin if not active
-if (!yourls_is_active_plugin('qrcode/plugin.php')) {
-    yourls_activate_plugin('qrcode/plugin.php');
+if (!yourls_is_active_plugin('seans-qrcode/plugin.php')) {
+    yourls_activate_plugin('seans-qrcode/plugin.php');
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['url'])) {
