@@ -1,8 +1,8 @@
 <!--
     File: README.md
     Author: Colin Dixon BSc, DipEd, Cert IV TAE
-    Date: 02 May 2026 09:01 AEST
-    Version: v03
+    Date: 02 May 2026 09:22 AEST
+    Version: v04
 -->
 # OZ On Line (ozol.au)
 
@@ -22,13 +22,24 @@ This repository contains the configuration and source code for the **ozol.au** p
 
 ## 📁 Project Structure
 
-- `index.html` - Main landing page containing the interactive timeline and the custom URL Shortener form.
-- `shorten.php` - Custom backend proxy script handling public URL shortening requests.
-- `admin/` - YOURLS admin panel.
-- `user/` - YOURLS user data, including config (`config.php`) and plugins (`plugins/sleeky-backend`, `plugins/seans-qrcode`).
-- `css/` & `js/` - Custom styling and scripts for the portfolio UI and AJAX URL shortening.
-- `images/` - Contains gallery and hero images.
-- `deploy.sh` - Automated deployment script for GitHub Actions.
+```text
+/
+├── admin/            # YOURLS core admin panel
+├── css/              # Custom portfolio styles
+│   └── style.css
+├── images/           # Portfolio graphics & background themes
+├── includes/         # YOURLS core libraries
+├── js/               # Custom scripts (UI logic & API calls)
+│   └── script.js
+├── user/             # YOURLS configuration and plugins
+│   ├── config.php
+│   └── plugins/
+│       ├── seans-qrcode/     # Custom QR code plugin
+│       └── sleeky-backend/   # Custom admin theme
+├── index.html        # Main portfolio and URL shortener UI
+├── shorten.php       # AJAX proxy script for shortening
+└── deploy.sh         # Deployment script
+```
 
 ## ⚙️ Maintenance & Deployment
 
