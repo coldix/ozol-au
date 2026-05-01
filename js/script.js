@@ -92,6 +92,9 @@ const shortenBtn = document.getElementById('shortenBtn');
 const shortenResult = document.getElementById('shortenResult');
 const shortUrlDisplay = document.getElementById('shortUrlDisplay');
 const copyShortUrlBtn = document.getElementById('copyShortUrlBtn');
+const showQrBtn = document.getElementById('showQrBtn');
+const qrCodeContainer = document.getElementById('qrCodeContainer');
+const qrCodeImg = document.getElementById('qrCodeImg');
 const shortenError = document.getElementById('shortenError');
 
 if (shortenForm) {
@@ -104,6 +107,8 @@ if (shortenForm) {
         // Reset UI
         shortenResult.style.display = 'none';
         shortenError.style.display = 'none';
+        if (qrCodeContainer) qrCodeContainer.style.display = 'none';
+        if (showQrBtn) showQrBtn.textContent = 'QR Code';
         shortenBtn.disabled = true;
         shortenBtn.textContent = 'Shortening...';
         
@@ -144,4 +149,17 @@ if (shortenForm) {
             setTimeout(() => { copyShortUrlBtn.textContent = originalText; }, 2000);
         });
     });
+    
+    if (showQrBtn) {
+        showQrBtn.addEventListener('click', () => {
+            if (qrCodeContainer.style.display === 'none') {
+                qrCodeImg.src = shortUrlDisplay.value + '.qr';
+                qrCodeContainer.style.display = 'block';
+                showQrBtn.textContent = 'Hide QR Code';
+            } else {
+                qrCodeContainer.style.display = 'none';
+                showQrBtn.textContent = 'QR Code';
+            }
+        });
+    }
 }

@@ -10,17 +10,17 @@ This repository contains the configuration and source code for the **ozol.au** p
 
 2. **YOURLS URL Shortener**
    - **Core**: Powered by [YOURLS](https://yourls.org/) (Your Own URL Shortener) v1.10.3.
-   - **Frontend**: Custom public-facing interface using the [Sleeky](https://github.com/Flynntes/Sleeky) theme (`index.php` and `frontend/` directory).
+   - **Frontend**: Custom, fully public glassmorphism interface integrated natively into `index.html` via `shorten.php` AJAX calls.
    - **Backend**: Sleeky backend theme installed as a plugin in `/user/plugins/sleeky-backend`.
    - **Database**: Configured to connect to the Hostinger database via `user/config.php`.
 
 ## 📁 Project Structure
 
-- `index.html` - Main landing page containing the interactive timeline.
-- `index.php` & `frontend/` - Sleeky frontend interface for the URL shortener.
+- `index.html` - Main landing page containing the interactive timeline and the custom URL Shortener form.
+- `shorten.php` - Custom backend proxy script handling public URL shortening requests.
 - `admin/` - YOURLS admin panel.
 - `user/` - YOURLS user data, including config (`config.php`) and plugins (`plugins/sleeky-backend`).
-- `css/` & `js/` - Custom styling and scripts for the portfolio UI.
+- `css/` & `js/` - Custom styling and scripts for the portfolio UI and AJAX URL shortening.
 - `images/` - Contains gallery and hero images.
 - `deploy.sh` - Automated deployment script for GitHub Actions.
 
