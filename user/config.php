@@ -57,6 +57,7 @@ define( 'YOURLS_COOKIEKEY', 'ozol_random_cookie_hash_8f9g2a1c0b3d4e5f6g7h8i9j0' 
  ** Read https://yourls.org/userpassword for more information */
 $yourls_user_passwords = [
     'username' => 'phpass:!2y!10!1OGvnD6MD4o7QDPATmyd6.G0ONlnLi9a8igfgZQrjuwOxS4cJYPwu' /* Password encrypted by YOURLS */ ,
+    'colin' => 'Coota#$9026',
     // 'username2' => 'password2',
     // You can have one or more 'login'=>'password' lines
 ];

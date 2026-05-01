@@ -85,3 +85,63 @@ copyBtn.addEventListener('click', () => {
         setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
     });
 });
+
+// --- URL Shortener Handling ---
+const shortenForm = document.getElementById('shortenForm');
+const shortenBtn = document.getElementById('shortenBtn');
+const shortenResult = document.getElementById('shortenResult');
+const shortUrlDisplay = document.getElementById('shortUrlDisplay');
+const copyShortUrlBtn = document.getElementById('copyShortUrlBtn');
+const shortenError = document.getElementById('shortenError');
+
+if (shortenForm) {
+    shortenForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const longUrl = document.getElementById('longUrl').value;
+        const customKeyword = document.getElementById('customKeyword').value;
+        
+        // Reset UI
+        shortenResult.style.display = 'none';
+        shortenError.style.display = 'none';
+        shortenBtn.disabled = true;
+        shortenBtn.textContent = 'Shortening...';
+        
+        try {
+            const formData = new FormData();
+            formData.append('url', longUrl);
+            if (customKeyword) formData.append('keyword', customKeyword);
+            
+            const response = await fetch('/shorten.php', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (data && data.status === 'success') {
+                shortUrlDisplay.value = data.shorturl;
+                shortenResult.style.display = 'block';
+                shortenForm.reset();
+            } else {
+                shortenError.textContent = data.message || 'An error occurred while shortening the URL.';
+                shortenError.style.display = 'block';
+            }
+        } catch (error) {
+            shortenError.textContent = 'Network error. Please try again.';
+            shortenError.style.display = 'block';
+        } finally {
+            shortenBtn.disabled = false;
+            shortenBtn.textContent = 'Shorten';
+        }
+    });
+    
+    copyShortUrlBtn.addEventListener('click', () => {
+        shortUrlDisplay.select();
+        navigator.clipboard.writeText(shortUrlDisplay.value).then(() => {
+            const originalText = copyShortUrlBtn.textContent;
+            copyShortUrlBtn.textContent = 'Copied!';
+            setTimeout(() => { copyShortUrlBtn.textContent = originalText; }, 2000);
+        });
+    });
+}

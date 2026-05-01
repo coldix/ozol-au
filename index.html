@@ -81,9 +81,29 @@
     <div class="hero" aria-labelledby="introTitle">
         <h1 id="introTitle" style="position:absolute;left:-9999px">OZ On Line — Colin Dixon's Journey</h1>
         
-        <div class="card hero-card" style="margin-top: 4rem;">
-          <h2>Project in Development</h2>
-          <p class="hero-intro">This project is currently under construction. Stay tuned!</p>
+        <div class="card hero-card shortener-card" style="margin-top: 4rem;">
+          <h2 style="margin-top: 0;">Shorten a URL</h2>
+          <p class="hero-intro">Paste your long URL below to create a concise, trackable ozol.au link.</p>
+          <form id="shortenForm" style="margin-top: 1.5rem;">
+            <div class="form-group">
+                <input type="url" id="longUrl" placeholder="https://example.com/very/long/url..." required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
+            </div>
+            <div class="form-group" style="margin-top: 1rem;">
+                <input type="text" id="customKeyword" placeholder="Custom keyword (optional)" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
+            </div>
+            <div style="display:flex; justify-content:flex-end; margin-top: 1.5rem;">
+                <button type="submit" class="btn primary" id="shortenBtn" style="width: 100%;">Shorten</button>
+            </div>
+          </form>
+          <div id="shortenResult" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; background: rgba(0, 255, 128, 0.1); border: 1px solid rgba(0, 255, 128, 0.2);">
+             <p style="margin:0; margin-bottom: 0.5rem; color: #4ade80;"><strong>Success!</strong> Your short URL is:</p>
+             <div style="display:flex; gap: 0.5rem;">
+                 <input type="text" id="shortUrlDisplay" readonly style="flex:1; padding: 0.5rem; border-radius: 4px; border: none; background: rgba(0,0,0,0.2); color: inherit;">
+                 <button type="button" class="btn" id="copyShortUrlBtn">Copy</button>
+             </div>
+          </div>
+          <div id="shortenError" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.2); color: #ffcccc;">
+          </div>
         </div>
     </div>
 
