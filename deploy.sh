@@ -34,4 +34,4 @@ echo "⬆️  Pushing to origin/main..."
 git push origin main
 
 echo "🎉 Push complete! The GitHub Action 'Deploy to Hostinger' should be running now."
-echo "🔗 View progress at: https://github.com/coldix/ozol/actions"
+echo "🔗 View progress at: https://github.com/coldix/ozol-au/actions"
