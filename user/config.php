@@ -62,6 +62,9 @@ $yourls_user_passwords = [
     // You can have one or more 'login'=>'password' lines
 ];
 
+/** Password required to use the custom frontend form */
+define('FRONTEND_PASSWORD', 'Coota#$9026');
+
 /** URL shortening method: either 36 or 62
  ** 36: generates all lowercase keywords (ie: 13jkm)
  ** 62: generates mixed case keywords (ie: 13jKm or 13JKm) 

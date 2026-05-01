@@ -88,11 +88,17 @@
             <div class="form-group">
                 <input type="url" id="longUrl" placeholder="https://example.com/very/long/url..." required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
             </div>
-            <div class="form-group" style="margin-top: 1rem;">
-                <input type="text" id="customKeyword" placeholder="Custom keyword (optional)" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
+            <div style="display:flex; gap: 1rem; margin-top: 1rem;">
+                <div class="form-group" style="flex:1;">
+                    <input type="text" id="customKeyword" placeholder="Custom keyword (optional)" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
+                </div>
+                <div class="form-group" style="flex:1;">
+                    <input type="password" id="shortenPassword" placeholder="Access Password" required style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: inherit;">
+                </div>
             </div>
-            <div style="display:flex; justify-content:flex-end; margin-top: 1.5rem;">
-                <button type="submit" class="btn primary" id="shortenBtn" style="width: 100%;">Shorten</button>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top: 1.5rem;">
+                <a href="/admin/" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">⚙️ Admin / Options</a>
+                <button type="submit" class="btn primary" id="shortenBtn" style="width: 50%;">Shorten</button>
             </div>
           </form>
           <div id="shortenResult" style="display: none; margin-top: 1.5rem; padding: 1rem; border-radius: 8px; background: rgba(0, 255, 128, 0.1); border: 1px solid rgba(0, 255, 128, 0.2);">

@@ -100,6 +100,7 @@ if (shortenForm) {
         
         const longUrl = document.getElementById('longUrl').value;
         const customKeyword = document.getElementById('customKeyword').value;
+        const shortenPassword = document.getElementById('shortenPassword').value;
         
         // Reset UI
         shortenResult.style.display = 'none';
@@ -110,6 +111,7 @@ if (shortenForm) {
         try {
             const formData = new FormData();
             formData.append('url', longUrl);
+            formData.append('password', shortenPassword);
             if (customKeyword) formData.append('keyword', customKeyword);
             
             const response = await fetch('/shorten.php', {
