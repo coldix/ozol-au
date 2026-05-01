@@ -12,17 +12,6 @@ if ($current_next_id !== false && (int)$current_next_id < 46656) {
 
 // Check if URL was posted
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['url'])) {
-    
-    // Verify frontend password
-    $provided_password = isset($_POST['password']) ? $_POST['password'] : '';
-    if (!defined('FRONTEND_PASSWORD') || $provided_password !== FRONTEND_PASSWORD) {
-        echo json_encode([
-            'status'  => 'fail',
-            'message' => 'Unauthorized: Incorrect password'
-        ]);
-        exit;
-    }
-
     $url = $_POST['url'];
     // Keyword is optional
     $keyword = isset($_POST['keyword']) ? $_POST['keyword'] : '';
