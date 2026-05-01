@@ -25,7 +25,7 @@ This repository contains the configuration and source code for the **ozol.au** p
 - `index.html` - Main landing page containing the interactive timeline and the custom URL Shortener form.
 - `shorten.php` - Custom backend proxy script handling public URL shortening requests.
 - `admin/` - YOURLS admin panel.
-- `user/` - YOURLS user data, including config (`config.php`) and plugins (`plugins/sleeky-backend`).
+- `user/` - YOURLS user data, including config (`config.php`) and plugins (`plugins/sleeky-backend`, `plugins/qrcode`).
 - `css/` & `js/` - Custom styling and scripts for the portfolio UI and AJAX URL shortening.
 - `images/` - Contains gallery and hero images.
 - `deploy.sh` - Automated deployment script for GitHub Actions.
