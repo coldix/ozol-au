@@ -72,19 +72,14 @@ function sean_yourls_qrcode( $request ) {
 			$options->version          = 7;
 			$options->eccLevel         = QRCode::ECC_H;
 			$options->imageBase64      = false;
-			$options->logoSpaceWidth   = SEAN_QR_LOGO_SPACE;
-			$options->logoSpaceHeight  = SEAN_QR_LOGO_SPACE;
 			$options->scale            = SEAN_QR_SCALE;
 			$options->imageTransparent = false;
 			$options->quietzoneSize    = SEAN_QR_MARGIN;
 
 			header('Content-type: image/png');
 
-			$qrOutputInterface = new QRImageWithLogo($options, (new QRCode($options))->getMatrix($url));
-
-			// dump the output, with an additional logo
-			echo $qrOutputInterface->dump(null, __DIR__.'/logo.png');
-
+			echo (new QRCode($options))->render($url);
+			
 			exit;
 		}
 	}
