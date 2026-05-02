@@ -130,7 +130,10 @@ if (shortenForm) {
                     qrCodeImg.src = qrUrl;
                     qrCodeImg.alt = 'QR Code for ' + data.shorturl;
                     downloadQrBtn.href = qrUrl;
-                    downloadQrBtn.download = 'QR-' + data.url.keyword + '.png';
+                    
+                    const keyword = data?.url?.keyword || new URL(data.shorturl).pathname.replace(/^\/+/, '').replace(/\/$/, '');
+                    downloadQrBtn.download = 'QR-' + keyword + '.png';
+                    
                     qrCodeContainer.style.display = 'block';
                 }
                 shortenResult.style.display = 'block';

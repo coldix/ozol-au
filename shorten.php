@@ -4,10 +4,7 @@ header('Content-Type: application/json');
 // Initialize YOURLS environment
 require_once dirname(__FILE__) . '/includes/load-yourls.php';
 
-// Auto-activate QR Code plugin if not active
-if (!yourls_is_active_plugin('seans-qrcode/plugin.php')) {
-    yourls_activate_plugin('seans-qrcode/plugin.php');
-}
+// QR plugin must be active in YOURLS admin. Do not auto-activate plugins from a public endpoint.
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['url'])) {
     $url = $_POST['url'];
@@ -28,6 +25,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['url'])) {
             echo json_encode([
                 'status'  => 'fail',
                 'message' => 'Custom keyword should be between 3 and 20 characters long.'
+            ]);
+            exit;
+        }
+        
+        if (yourls_keyword_is_taken($keyword)) {
+            echo json_encode([
+                'status'  => 'fail',
+                'message' => 'That custom keyword is already taken. Please choose another.'
             ]);
             exit;
         }
