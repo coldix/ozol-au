@@ -68,18 +68,20 @@ function sean_yourls_qrcode( $request ) {
 			}
 
 			$options = new LogoOptions;
-
 			$options->version          = 7;
 			$options->eccLevel         = QRCode::ECC_H;
 			$options->imageBase64      = false;
+			$options->logoSpaceWidth   = SEAN_QR_LOGO_SPACE;
+			$options->logoSpaceHeight  = SEAN_QR_LOGO_SPACE;
 			$options->scale            = SEAN_QR_SCALE;
 			$options->imageTransparent = false;
 			$options->quietzoneSize    = SEAN_QR_MARGIN;
 
 			header('Content-type: image/png');
 
-			echo (new QRCode($options))->render($url);
-			
+			$qrOutputInterface = new QRImageWithLogo($options, (new QRCode($options))->getMatrix($url));
+			echo $qrOutputInterface->dump(null, __DIR__.'/logo.png');
+
 			exit;
 		}
 	}
